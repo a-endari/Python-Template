@@ -16,9 +16,6 @@ updates:
           - "mypy*"
           - "ruff*"
           - "pre-commit*"
-    labels:
-      - "dependencies"
-      - "python"
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
@@ -28,9 +25,6 @@ updates:
       day: "monday"
       time: "08:00"
     open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "github-actions"
 
   # Docker base images
   - package-ecosystem: "docker"
@@ -39,6 +33,3 @@ updates:
       interval: "weekly"
       day: "monday"
       time: "08:00"
-    labels:
-      - "dependencies"
-      - "docker"
