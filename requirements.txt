@@ -1,0 +1,7 @@
+# Production dependencies — keep this minimal.
+# Add packages here and mirror them in pyproject.toml [project.dependencies].
+# Generated with: uv pip compile pyproject.toml -o requirements.txt
+#
+# Example:
+# httpx==0.27.0
+# pydantic==2.7.4

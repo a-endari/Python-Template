@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    image: python-template:local
+    container_name: python-template
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  # Run tests inside a container (useful for CI parity)
+  test:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+    working_dir: /workspace
+    command: >
+      bash -c "uv pip install -e '.[dev]' && pytest --cov=src --cov-report=term-missing"
+    profiles:
+      - test
