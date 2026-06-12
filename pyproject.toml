@@ -21,6 +21,15 @@ classifiers = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "mypy>=1.10",
+    "ruff>=0.4",
+    "pre-commit>=3.7",
+]
+
 [project.urls]
 Homepage = "https://github.com/a-endari/python-template"
 Repository = "https://github.com/a-endari/python-template"
@@ -31,7 +40,7 @@ Changelog = "https://github.com/a-endari/python-template/blob/main/CHANGELOG.md"
 python-template = "my_project.main:main"
 
 # ---------------------------------------------------------------------------
-# uv
+# uv — mirrors [project.optional-dependencies.dev] for local uv sync
 # ---------------------------------------------------------------------------
 [tool.uv]
 dev-dependencies = [
