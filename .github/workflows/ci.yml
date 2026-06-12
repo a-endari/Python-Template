@@ -24,8 +24,6 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
-        with:
-          enable-cache: true
 
       - name: Install dev dependencies
         run: uv pip install --system ruff mypy
@@ -58,8 +56,6 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
-        with:
-          enable-cache: true
 
       - name: Install project with dev dependencies
         run: uv pip install --system -e ".[dev]"

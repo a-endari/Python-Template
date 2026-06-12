@@ -14,6 +14,7 @@ COPY src/ ./src/
 
 # Install only production dependencies into a virtual environment
 RUN uv venv .venv \
+    && uv pip install --python .venv/bin/python hatchling \
     && uv pip install --no-cache --python .venv/bin/python .
 
 # =============================================================================
