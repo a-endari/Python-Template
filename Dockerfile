@@ -1,7 +1,7 @@
 # =============================================================================
 # Stage 1: builder — installs dependencies into an isolated venv
 # =============================================================================
-FROM python:3.13-slim AS builder
+FROM python:3.14-slim AS builder
 
 WORKDIR /app
 
@@ -26,7 +26,7 @@ RUN uv pip install --no-cache .
 # =============================================================================
 # Stage 2: runtime — lean final image, no build tools
 # =============================================================================
-FROM python:3.13-slim AS runtime
+FROM python:3.14-slim AS runtime
 
 WORKDIR /app
 
