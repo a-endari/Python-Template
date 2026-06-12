@@ -12,14 +12,17 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 RUN uv venv .venv
 ENV PATH="/app/.venv/bin:$PATH"
 
-# Copy dependency manifest — this layer is cached until pyproject.toml changes
+# Copy project metadata files required by Hatchling build backend
+# These are declared in pyproject.toml and must be present during build
 COPY pyproject.toml ./
+COPY LICENSE ./
+COPY README.md ./
 
 # Install hatchling (the build backend declared in pyproject.toml)
 # uv needs it to build the project wheel from source
 RUN uv pip install --no-cache hatchling
 
-# Copy source and install the project (production deps only — no [dev] extras)
+# Copy source code and install the project (production deps only — no [dev] extras)
 COPY src/ ./src/
 RUN uv pip install --no-cache .
 
