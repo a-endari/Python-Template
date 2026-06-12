@@ -23,11 +23,11 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.3",
-    "pytest-cov>=5.0",
-    "mypy>=1.10",
-    "ruff>=0.4",
-    "pre-commit>=3.7",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "mypy>=2.1.0",
+    "ruff>=0.15.17",
+    "pre-commit>=4.6.0",
 ]
 
 [project.urls]
@@ -44,11 +44,11 @@ python-template = "my_project.main:main"
 # ---------------------------------------------------------------------------
 [tool.uv]
 dev-dependencies = [
-    "pytest>=8.3",
-    "pytest-cov>=5.0",
-    "mypy>=1.10",
-    "ruff>=0.4",
-    "pre-commit>=3.7",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "mypy>=2.1.0",
+    "ruff>=0.15.17",
+    "pre-commit>=4.6.0",
 ]
 
 # ---------------------------------------------------------------------------
